@@ -26,8 +26,8 @@ import com.saurabh.apigee.bidding.util.ThreadSafe;
 public class BidTrackerImpl implements BidTracker {
 
     // Maps to track bid histories.
-    private final Map<Item, Queue<Bid>> itemHistory   = new ConcurrentHashMap<>(100, 0.75f);
-    private final Map<User, Queue<Item>>  userHistory = new ConcurrentHashMap<>(100, 0.75f);
+    private final Map<Item, Queue<Bid>> itemHistory   = new ConcurrentHashMap<>(10000, 0.75f);
+    private final Map<User, Queue<Item>>  userHistory = new ConcurrentHashMap<>(100000, 0.75f);
 
     /**
      * Attempt to register a bid on an item. If the bid
